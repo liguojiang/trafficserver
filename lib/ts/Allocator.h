@@ -45,7 +45,7 @@
 #include "ts/ink_queue.h"
 #include "ts/ink_defs.h"
 #include "ts/ink_resource.h"
-#include <execinfo.h>
+//#include <execinfo.h>
 
 #define RND16(_x) (((_x) + 15) & ~15)
 
@@ -215,7 +215,7 @@ public:
   alloc()
   {
     void *callstack[3];
-    int frames = backtrace(callstack, 3);
+    int frames = 3; //backtrace(callstack, 3);
     C *ptr     = ClassAllocator<C>::alloc();
 
     const void *symbol = nullptr;
